@@ -162,7 +162,8 @@
   .bg-section-overlay { position: absolute; inset: 0; background: rgba(10,20,10,0.80); }
   .bg-section-inner { position: relative; z-index: 2; padding: 5rem 4rem; width: 100%; }
   .bg-section-content { max-width: 1100px; margin: 0 auto; }
-  .glass-card { max-width: 500px; background: rgba(245,240,232,0.1); backdrop-filter: blur(14px); -webkit-backdrop-filter: blur(14px); border: 1px solid rgba(245,240,232,0.22); padding: 3rem; }
+  .glass-card { max-width: 500px; background: rgba(245,240,232,0.1); backdrop-filter: blur(14px); -webkit-backdrop-filter: blur(14px); border: 1px solid rgba(245,240,232,0.22); padding: 3rem; opacity: 0; }
+  .glass-card.is-visible { animation: fadeUp 0.8s ease forwards; }
   .glass-card .section-label { color: var(--terra-light); }
   .bg-section-content > .section-label::after { background: var(--terra-light); }
   .glass-card .section-label::after { background: var(--terra-light); }
@@ -413,5 +414,18 @@
   </div>
 </footer>
 
+<script>
+  const bgSection = document.querySelector('.bg-section');
+  if (bgSection) {
+    new IntersectionObserver((entries, obs) => {
+      if (entries[0].isIntersecting) {
+        setTimeout(() => {
+          bgSection.querySelector('.glass-card').classList.add('is-visible');
+        }, 2000);
+        obs.unobserve(bgSection);
+      }
+    }, { threshold: 0.25 }).observe(bgSection);
+  }
+</script>
 </body>
 </html>
