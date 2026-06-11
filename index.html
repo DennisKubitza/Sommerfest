@@ -126,10 +126,11 @@
   .footer-name { font-family: 'Cormorant Garamond', serif; font-size: 1.25rem; font-style: italic; color: var(--cream); margin-bottom: 0.4rem; }
   footer a { color: var(--terra-light); text-decoration: none; }
   footer a:hover { text-decoration: underline; }
+  .footer-agency-link:hover { text-decoration: none; }
   .footer-middle { flex: 1; text-align: right; display: flex; flex-direction: column; align-items: flex-end; }
-  .footer-agency-link { font-size: 0.9rem; font-weight: 500; color: var(--terra-light); text-decoration: none; transition: opacity 0.2s; }
-  .footer-agency-link:hover { opacity: 0.75; }
-  .footer-tagline { font-family: 'Lora', serif; font-size: 0.8rem; color: rgba(200,216,192,0.6); margin-top: 0.2rem; font-style: italic; }
+  .footer-agency-link { font-size: 0.9rem; font-weight: 500; color: #EFB858; text-decoration: none; border: 1px solid #EFB858; padding: 0.5rem 0.9rem; border-radius: 6px; display: inline-flex; flex-direction: column; align-items: flex-end; gap: 0.15rem; transition: background 0.2s; }
+  .footer-agency-link:hover { background: rgba(239,184,88,0.1); text-decoration: none; }
+  .footer-tagline { font-family: 'Lora', serif; font-size: 0.75rem; color: rgba(239,184,88,0.65); font-style: italic; }
   .footer-right { display: flex; align-items: center; justify-content: flex-end; }
 
   /* ─ RESPONSIVE ──────────────────────────────────────────────────────── */
@@ -406,8 +407,7 @@
     </div>
     <div class="footer-middle">
       <div class="footer-name">Konzept &amp; Gestaltung</div>
-      <a href="https://baum-kubi.com" target="_blank" class="footer-agency-link">Dr. Lisa Baum &amp; Dennis Kubitza</a>
-      <div class="footer-tagline">Marketing mit Köpfchen</div>
+      <a href="https://baum-kubi.com" target="_blank" class="footer-agency-link"><span>Dr. Lisa Baum &amp; Dennis Kubitza</span><span class="footer-tagline">Marketing mit Köpfchen</span></a>
     </div>
     <div class="footer-right">
       <a href="https://baum-kubi.com" target="_blank" style="display:block;width:96px;height:96px;border-radius:12px;overflow:hidden;flex-shrink:0;">
